@@ -6,18 +6,12 @@ import {Nav} from "@/components/ui/nav";
 type Props = {}
 
 import {
-    AlertCircle,
     Archive,
-    ArchiveX,
-    File,
-    Inbox,
-    MessagesSquare,
-    PenBox,
-    Search,
-    Send,
+    LayoutDashboard,
+    Settings,
     ShoppingCart,
     Trash2,
-    Users2,
+    UserRound,
 } from "lucide-react"
 
 export default function SideNavbar({}: Props){
@@ -28,39 +22,39 @@ export default function SideNavbar({}: Props){
                 isCollapsed={false}
                 links={[
                     {
-                        title: "Inbox",
+                        title: "Dashboard",
                         label: "128",
-                        icon: Inbox,
+                        icon: LayoutDashboard,
                         variant: "default",
                     },
                     {
-                        title: "Drafts",
+                        title: "Users",
                         label: "9",
-                        icon: File,
+                        icon: UserRound,
                         variant: "ghost",
                     },
                     {
-                        title: "Sent",
+                        title: "Orders",
                         label: "",
-                        icon: Send,
-                        variant: "ghost",
-                    },
-                    {
-                        title: "Junk",
-                        label: "23",
-                        icon: ArchiveX,
-                        variant: "ghost",
-                    },
-                    {
-                        title: "Trash",
-                        label: "",
-                        icon: Trash2,
+                        icon: ShoppingCart,
                         variant: "ghost",
                     },
                     {
                         title: "Archive",
                         label: "",
                         icon: Archive,
+                        variant: "ghost",
+                    },
+                    {
+                        title: "Setting",
+                        label: "23",
+                        icon: Settings,
+                        variant: "ghost",
+                    },
+                    {
+                        title: "Trash",
+                        label: "",
+                        icon: Trash2,
                         variant: "ghost",
                     },
                 ]}
