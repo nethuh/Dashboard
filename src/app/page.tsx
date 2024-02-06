@@ -92,6 +92,15 @@ export default function Home() {
                             You made 300 sales this month.
                         </p>
                     </section>
+                    {uesrSalesData.map((d,i) => (
+                        <SalesCard
+                            key={i}
+                            email={d.email}
+                            name={d.name}
+                            saleAmount={d.saleAmount}
+                        />
+                        ))}
+
                 </CardContent>
             </section>
         </div>
