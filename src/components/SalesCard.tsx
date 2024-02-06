@@ -21,8 +21,9 @@ export default function SalesCard(props: SalesProps) {
                         {props.email}
                     </div>
                 </div>
-                <p>{props.saleAmount}</p>
+
             </section>
+            <p>{props.saleAmount}</p>
         </div>
     );
 }
