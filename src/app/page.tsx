@@ -3,6 +3,7 @@ import PageTitle from "@/components/PageTitle";
 import Card, {CardContent, CardProps} from "@/components/Card";
 import {Activity, CreditCard, DollarSign, Users} from "lucide-react";
 import SalesCard, {SalesProps} from "@/components/SalesCard";
+import BarChart from "@/components/BarChart";
 
 const cardData: CardProps[] = [
     {
@@ -80,6 +81,11 @@ export default function Home() {
 
                 <CardContent>
                     <p className="p-4 font-semibold">Overview</p>
+
+                    <BarChart/>
+                </CardContent>
+
+                <CardContent>
 
                 </CardContent>
             </section>
