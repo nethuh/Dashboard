@@ -14,14 +14,14 @@ import {
 import {usePathname} from "next/navigation";
 
 interface NavProps {
-    isCollapsed: boolean
+    isCollapsed: boolean;
     links: {
-        title: string
-        label?: string
-        icon: LucideIcon
-        variant: "default" | "ghost"
+        title: string;
+        label?: string;
+        icon: LucideIcon;
+        variant: "default" | "ghost";
         href: string;
-    }[]
+    }[];
 }
 
 export function Nav({links, isCollapsed}: NavProps) {

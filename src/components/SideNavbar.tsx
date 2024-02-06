@@ -1,9 +1,10 @@
-'use client';
+/** @format */
+"use client";
 
-import React, {useState} from "react";
-import {Nav} from "@/components/ui/nav";
+import { useState } from "react";
+import { Nav } from "./ui/nav";
 
-type Props = {}
+type Props = {};
 
 import {
     Archive,
@@ -13,28 +14,36 @@ import {
     ShoppingCart,
     Trash2,
     UserRound,
-} from "lucide-react"
-import {Button} from "@/components/ui/button";
+} from "lucide-react";
+import { Button } from "./ui/button";
 
-export default function SideNavbar({}: Props){
+import { useWindowWidth } from "@react-hook/window-size";
+
+export default function SideNavbar({}: Props) {
     const [isCollapsed, setIsCollapsed] = useState(false);
+
+    const onlyWidth = useWindowWidth();
+    const mobileWidth = onlyWidth < 768;
 
     function toggleSidebar() {
         setIsCollapsed(!isCollapsed);
     }
 
     return (
-        <div className="relative min-w-[51px ] border-r px-3 pb-10 pt-24">
-            <div className="absolute right-[-20px] top-7">
-            <Button
-                onClick={toggleSidebar}
-                variant='secondary'
-                className="p-2 rounded-full">
-                <ChevronRight/>
-            </Button>
-            </div>
+        <div className="relative min-w-[80px] border-r px-3  pb-10 pt-24 ">
+            {!mobileWidth && (
+                <div className="absolute right-[-20px] top-7">
+                    <Button
+                        onClick={toggleSidebar}
+                        variant="secondary"
+                        className=" rounded-full p-2"
+                    >
+                        <ChevronRight />
+                    </Button>
+                </div>
+            )}
             <Nav
-                isCollapsed={isCollapsed}
+                isCollapsed={mobileWidth ? true : isCollapsed}
                 links={[
                     {
                         title: "Dashboard",
@@ -44,37 +53,36 @@ export default function SideNavbar({}: Props){
                     },
                     {
                         title: "Users",
-                        href: "/",
+                        href: "/user",
                         icon: UserRound,
                         variant: "ghost",
                     },
                     {
                         title: "Orders",
-                        href: "/",
+                        href: "/orders",
                         icon: ShoppingCart,
                         variant: "ghost",
                     },
                     {
                         title: "Archive",
-                        href: "/",
+                        href: "/archive",
                         icon: Archive,
                         variant: "ghost",
                     },
                     {
                         title: "Setting",
-                        href: "/",
+                        href: "/setting",
                         icon: Settings,
                         variant: "ghost",
                     },
                     {
                         title: "Trash",
-                        href: "/",
+                        href: "/trash",
                         icon: Trash2,
                         variant: "ghost",
                     },
                 ]}
             />
         </div>
-    )
+    );
 }
-
