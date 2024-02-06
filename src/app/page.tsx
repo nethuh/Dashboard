@@ -85,8 +85,13 @@ export default function Home() {
                     <BarChart/>
                 </CardContent>
 
-                <CardContent>
-
+                <CardContent className="flex justify-between gap-4">
+                    <section>
+                        <p>Recent Sales</p>
+                        <p className="text-sm text-gray-400">
+                            You made 300 sales this month.
+                        </p>
+                    </section>
                 </CardContent>
             </section>
         </div>
