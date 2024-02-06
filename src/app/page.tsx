@@ -4,6 +4,7 @@ import Card, {CardContent, CardProps} from "@/components/Card";
 import {Activity, CreditCard, DollarSign, Users} from "lucide-react";
 import SalesCard, {SalesProps} from "@/components/SalesCard";
 import BarChart from "@/components/BarChart";
+import Navbar from "@/components/Navbar";
 
 const cardData: CardProps[] = [
     {
@@ -64,6 +65,8 @@ const uesrSalesData: SalesProps[] = [
 export default function Home() {
     return (
         <div className="flex flex-col gap-5 w-full">
+
+            <Navbar/>
             <PageTitle title="Dashboard"/>
             <section className="grid w-full grid-cols-1 gap-4 gap-x-8 transition-all sm:grid-cols-2 xl:grid-cols-4">
 
