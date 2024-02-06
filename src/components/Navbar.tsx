@@ -1,5 +1,9 @@
 import React from "react";
 
+import {
+    MdSearch
+} from "react-icons/md";
+
 type Props = {};
 
 export default function Navbar({} : Props) {
@@ -8,7 +12,12 @@ export default function Navbar({} : Props) {
             <div className="font-bold text-white capitalize">
             </div>
             <div className="flex gap-20 items-center">
-                <div className=""></div>
+                <div className="flex gap-10 items-center p-2
+                rounded-xl bg-primary">
+                    <MdSearch className="text-white"/>
+                    <input
+                    />
+                </div>
             </div>
         </div>
     );
