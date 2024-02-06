@@ -1,6 +1,6 @@
 import Image from "next/image";
 import PageTitle from "@/components/PageTitle";
-import {CardProps} from "@/components/Card";
+import Card, {CardProps} from "@/components/Card";
 import {Activity, CreditCard, DollarSign, Users} from "lucide-react";
 import SalesCard, { SalesProps } from "@/components/SalesCard";
 
@@ -64,6 +64,19 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-5 w-full">
         <PageTitle title="Dashboard"/>
+        <section className="grid w-full grid-cols-1 gap-x-8 transition-all
+        sm:grid-cols-2 xl:grid-cols-4">
+
+            {cardData.map((d, i) => (
+                <Card
+                    key={i}
+                    amount={d.amount}
+                    discription={d.discription}
+                    icon={d.icon}
+                    label={d.label}
+                />
+            ))}
+        </section>
     </div>
   );
 }
