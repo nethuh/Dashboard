@@ -2,7 +2,8 @@ import React from "react";
 
 import {
     MdNotifications,
-    MdOutlineChat, MdPublic,
+    MdOutlineChat,
+    MdPublic,
     MdSearch
 } from "react-icons/md";
 

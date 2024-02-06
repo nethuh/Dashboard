@@ -1,10 +1,15 @@
-import Image from "next/image";
 import PageTitle from "@/components/PageTitle";
 import Card, {CardContent, CardProps} from "@/components/Card";
 import {Activity, CreditCard, DollarSign, Users} from "lucide-react";
 import SalesCard, {SalesProps} from "@/components/SalesCard";
 import BarChart from "@/components/BarChart";
 import Navbar from "@/components/Navbar";
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from "@/components/ui/tabs"
 
 const cardData: CardProps[] = [
     {
@@ -68,6 +73,22 @@ export default function Home() {
 
             <Navbar/>
             <PageTitle title="Dashboard"/>
+
+            <Tabs defaultValue="overview" className="space-y-4">
+                <TabsList className="h-12">
+                    <TabsTrigger className="bg-primary text-white" >Overview</TabsTrigger>
+                    <TabsTrigger value="analytics" disabled>
+                        Analytics
+                    </TabsTrigger>
+                    <TabsTrigger value="reports" disabled>
+                        Reports
+                    </TabsTrigger>
+                    <TabsTrigger value="notifications" disabled>
+                        Notifications
+                    </TabsTrigger>
+                </TabsList>
+            </Tabs>
+
             <section className="grid w-full grid-cols-1 gap-4 gap-x-8 transition-all sm:grid-cols-2 xl:grid-cols-4">
 
                 {cardData.map((d, i) => (
