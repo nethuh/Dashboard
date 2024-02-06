@@ -19,9 +19,10 @@ export default function Navbar({} : Props) {
                     <input
                     type="text"
                     placeholder="Search..."
+                    className="bg-transparent border-none text-white"
                     />
                 </div>
-                <div>
+                <div className="flex gap-10">
                     <MdOutlineChat size={20}/>
                     <MdNotifications size={20}/>
                     <MdPublic size={20}/>
